@@ -1,23 +1,25 @@
-function startTimer(duration) {
+document.onload = function() {
+  function startTimer(duration) {
 
-var myCountdown = setInterval(function countDown() {
+  var myCountdown = setInterval(function countDown() {
 
-  if((window.myTimer == null) || (window.myTimer < 0)) {
-    window.myTimer = duration;
-  }
+    if((window.myTimer == null) || (window.myTimer < 0)) {
+      window.myTimer = duration;
+    }
 
-  document.querySelector('body').innerHTML = `Timer: ${window.myTimer}`;
+    document.querySelector('body').innerHTML = `Timer: ${window.myTimer}`;
 
-  window.myTimer -= 1;
+    window.myTimer -= 1;
 
-  if(window.myTimer == -1) {
-    clearInterval(myCountdown);
-    document.querySelector('body').innerHTML = `Timer: TIME!`;
-  }
-}, 1000);
+    if(window.myTimer == -1) {
+      clearInterval(myCountdown);
+      document.querySelector('body').innerHTML = `Timer: TIME!`;
+    }
+  }, 1000);
 
-return "It's working!"
+  return "It's working!"
 
-};
+  };
 
-startTimer(10);
+  startTimer(10);
+}
